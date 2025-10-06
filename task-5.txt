@@ -1,4 +1,56 @@
-Öğrenci No:
-AD-SOYAD:
+Öğrenci No:250541060
+AD-SOYAD:Emre Cansever 
 
 Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
+  
+   İdeal Kahve Demleme
+
+Başla
+
+  // 1️⃣ Malzemeleri kontrol et
+  Eğer kahve yoksa
+      "Kahve satın al." yaz
+      Bitir
+  Eğer su yoksa
+      "Su temin et." yaz
+      Bitir
+
+  // 2️⃣ Oranları belirle
+  kahveGram = 15
+  suMl = 250
+
+  Eğer kahveGram / suMl > 1/15 ise
+      "Kahve fazla güçlü olabilir, kahveyi azalt." yaz
+  Eğer kahveGram / suMl < 1/18 ise
+      "Kahve zayıf olabilir, kahveyi artır." yaz
+
+  // 3️⃣ Suyu ısıt
+  suSıcaklığı = 20
+  hedefSıcaklık = 94
+
+  Döngü (suSıcaklığı < hedefSıcaklık) iken
+      suSıcaklığı = suSıcaklığı + 5
+      "Sıcaklık: " + suSıcaklığı yaz
+  Döngü sonu
+
+  Eğer suSıcaklığı > 96 ise
+      "Su fazla sıcak! Biraz soğumasını bekle." yaz
+
+  // 4️⃣ Kahveyi demle
+  demlemeSüresi = 0
+  hedefSüre = 240  // saniye = 4 dakika
+
+  Döngü (demlemeSüresi < hedefSüre) iken
+      demlemeSüresi = demlemeSüresi + 30
+      "Demleme devam ediyor... " + demlemeSüresi + " saniye geçti." yaz
+  Döngü sonu
+
+  // 5️⃣ Tat testi ve karar verme
+  Eğer tat == "acı" ise
+      "Öneri: Kahveyi daha kalın öğüt veya demleme süresini azalt." yaz
+  Eğer tat == "sulu" ise
+      "Öneri: Kahveyi daha ince öğüt veya miktarı artır." yaz
+  Eğer tat == "dengeli" ise
+      "İdeal kahve hazır!" yaz
+
+Bitir
