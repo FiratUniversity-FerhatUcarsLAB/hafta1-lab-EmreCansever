@@ -1,4 +1,30 @@
-Öğrenci No:
-AD-SOYAD:
+Öğrenci No:250541060
+AD-SOYAD:Emre Cansever 
 
 Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
+ 
+  İki büyük sayıyı kağıt kalemle çarpma
+
+Fonksiyon KaratsubaÇarp(X, Y):
+
+    Eğer X < 10 veya Y < 10 ise
+        Dön X * Y
+
+    n = max(X basamak sayısı, Y basamak sayısı)
+    m = n / 2 (tam sayı bölme)
+
+    // Sayıları ortadan ikiye böl
+    a = X // 10^m
+    b = X % 10^m
+    c = Y // 10^m
+    d = Y % 10^m
+
+    // Böl ve Fethet (recursive adımlar)
+    p1 = KaratsubaÇarp(a, c)
+    p2 = KaratsubaÇarp(b, d)
+    p3 = KaratsubaÇarp(a + b, c + d)
+
+    // Birleştir
+    sonuç = p1 * 10^(2m) + (p3 - p1 - p2) * 10^m + p2
+
+    Dön sonuç
