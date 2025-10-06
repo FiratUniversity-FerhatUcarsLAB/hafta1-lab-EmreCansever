@@ -1,4 +1,67 @@
-Öğrenci No:
-AD-SOYAD:
+Öğrenci No:250541060
+AD-SOYAD:Emre Cansever 
 
 Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
+ 
+ Mükemmel omlet yapma
+
+Başla
+
+  // Malzemeleri kontrol et
+  Eğer yumurta yoksa
+      "Yumurta satın al." yaz
+      Bitir
+  Değilse
+      devam et
+
+  Eğer tava yoksa
+      "Tava temin et." yaz
+      Bitir
+  Değilse
+      devam et
+
+  // Yumurtaları kır
+  kırılanYumurta = 0
+  hedefYumurta = 3
+
+  Döngü (kırılanYumurta < hedefYumurta) iken
+      "Bir yumurta kır." yaz
+      kırılanYumurta = kırılanYumurta + 1
+  Döngü sonu
+
+  // Baharat kontrolü
+  Eğer tuz varsa
+      "Tuz ekle." yaz
+  Değilse
+      "Tuz yok, tuzsuz omlet olacak." yaz
+
+  Eğer karabiber varsa
+      "Karabiber ekle." yaz
+
+  // Pişirme süreci
+  tavaSıcaklığı = 0
+  HedefSıcaklık = 180
+
+  Döngü (tavaSıcaklığı < HedefSıcaklık) iken
+      tavaSıcaklığı = tavaSıcaklığı + 20
+      "Tava ısınıyor... Sıcaklık: " + tavaSıcaklığı yaz
+  Döngü sonu
+
+  "Tava yeterince sıcak." yaz
+
+  "Yumurtaları tavaya dök." yaz
+
+  pişmeSüresi = 0
+  HedefPişme = 5
+
+  Döngü (pişmeSüresi < HedefPişme) iken
+      pişmeSüresi = pişmeSüresi + 1
+      "Omlet pişiyor... Dakika: " + pişmeSüresi yaz
+  Döngü sonu
+
+  Eğer omlet altın sarısı ise
+      "Omlet mükemmel oldu!" yaz
+  Değilse
+      "Bir dahaki sefere pişirme süresini ayarla." yaz
+
+Bitir
