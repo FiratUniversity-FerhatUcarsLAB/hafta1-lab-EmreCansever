@@ -1,4 +1,33 @@
-Öğrenci No:
-AD-SOYAD:
+Öğrenci No:250541060
+AD-SOYAD:Emre Cansever 
 
 Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
+
+ Telefon rehberini alfabetik düzenleme 
+
+phonebook = [
+    {"name": "Ahmet Yılmaz", "phone": "0533-111-1111"},
+    {"name": "özge kaya",   "phone": "0532-222-2222"},
+    {"name": "Burak Can",   "phone": "0555-333-3333"},
+    {"name": "ali veli",    "phone": "0505-444-4444"},
+]
+
+# Küçük harfe çevirip karşılaştırma yapan yardımcı fonksiyon
+def name_key(entry):
+    return entry["name"].lower()
+
+# Basit bubble sort
+n = len(phonebook)
+for i in range(n):
+    # Son i eleman zaten yerinde olacağından onlara bakmaya gerek yok
+    for j in range(0, n - i - 1):
+        # Eğer j elemanı, j+1 elemanından alfabetik olarak sonra ise takas et
+        if name_key(phonebook[j]) > name_key(phonebook[j + 1]):
+            # swap
+            temp = phonebook[j]
+            phonebook[j] = phonebook[j + 1]
+            phonebook[j + 1] = temp
+
+# Sonucu yazdır
+for entry in phonebook:
+    print(entry["name"], "-", entry["phone"])
