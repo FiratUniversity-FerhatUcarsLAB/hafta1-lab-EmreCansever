@@ -1,4 +1,52 @@
-Öğrenci No:
-AD-SOYAD:
+Öğrenci No:250541060
+AD-SOYAD:Emre Cansever 
 
 Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
+ 
+ Sudoku çözme yaklaşımı
+
+Başla
+
+  SudokuTahtası = 9x9 matris
+  BoşHücrelerListesi = SudokuTahtası içindeki boş hücrelerin listesi
+
+  Eğer BoşHücrelerListesi boş ise
+      "Sudoku tamamlandı!" yaz
+      Bitir
+
+  // Tüm boş hücreleri sırayla kontrol et
+  i = 0
+  Döngü (i < BoşHücrelerListesi uzunluğu) iken
+
+      hücre = BoşHücrelerListesi[i]
+      satır, sütun = hücre konumu
+
+      // 1–9 arasındaki olası sayıları kontrol et
+      OlasıSayılar = []
+      sayı = 1
+      Döngü (sayı <= 9) iken
+          Eğer sayı satırda yoksa VE sütunda yoksa VE 3x3 kutuda yoksa
+              OlasıSayılar’a ekle(sayı)
+          sayı = sayı + 1
+      Döngü sonu
+
+      Eğer OlasıSayılar boşsa
+          "Çakışma tespit edildi, geri dön." yaz
+          geri dön önceki hücreye (backtrack)
+      Değilse
+          // Karar verme: En az belirsizlikli sayıyı seç
+          Eğer OlasıSayılar uzunluğu == 1 ise
+              seçilen = OlasıSayılar[0]
+          Değilse
+              // Rakip hamlesi öngörme: İleride çakışma olasılığı en düşük olanı seç
+              seçilen = öngörüEnİyiSayı(OlasıSayılar, mevcutDurum)
+
+          SudokuTahtası[satır][sütun] = seçilen
+      Son
+
+      i = i + 1
+  Döngü sonu
+
+  "Sudoku başarıyla çözüldü!" yaz
+
+Bitir
